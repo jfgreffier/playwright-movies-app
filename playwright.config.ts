@@ -37,32 +37,32 @@ export default defineConfig({
 
   /* Configure projects for major browsers */
   projects: [
-    {
-      name: 'setup',
-      testDir: 'tests/logged-in',
-      testMatch: '**/*.setup.ts',
-      use: { ...devices['Desktop Chrome'] },
-    },
-    {
-      name: 'logged-in chrome',
-      testDir: 'tests/logged-in',
-      dependencies: ['setup'],
-      use: {
-        storageState: STORAGE_STATE,
-        ...devices['Desktop Chrome'],
-      },
-    },
-    {
-      name: 'chromium',
-      testDir: 'tests/logged-out',
-      use: { ...devices['Desktop Chrome'] },
-    },
+    // {
+    //   name: 'setup',
+    //   testDir: 'tests/logged-in',
+    //   testMatch: '**/*.setup.ts',
+    //   use: { ...devices['Desktop Chrome'] },
+    // },
+    // {
+    //   name: 'logged-in chrome',
+    //   testDir: 'tests/logged-in',
+    //   dependencies: ['setup'],
+    //   use: {
+    //     storageState: STORAGE_STATE,
+    //     ...devices['Desktop Chrome'],
+    //   },
+    // },
+    // {
+    //   name: 'chromium',
+    //   testDir: 'tests/logged-out',
+    //   use: { ...devices['Desktop Chrome'] },
+    // },
 
     /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
+    {
+      name: 'Mobile Chrome',
+      use: { ...devices['Pixel 5'] },
+    },
     // {
     //   name: 'Mobile Safari',
     //   use: { ...devices['iPhone 12'] },
@@ -80,9 +80,9 @@ export default defineConfig({
   ],
 
   /* Run your local dev server before starting the tests */
-  webServer: {
-    command: `cd ${path.resolve(__dirname, 'movies-app')} && npm run dev`,
-    url: "http://127.0.0.1:3000/",
-    reuseExistingServer: !process.env.CI,
-  },
+  // webServer: {
+  //   command: `cd ${path.resolve(__dirname, 'movies-app')} && npm run dev`,
+  //   url: "http://127.0.0.1:3000/",
+  //   reuseExistingServer: !process.env.CI,
+  // },
 });

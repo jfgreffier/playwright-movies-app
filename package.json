@@ -8,6 +8,7 @@
     "start": "cd movies-app && next start",
     "pretest": "tsc --noEmit && eslint tests/**/*.ts",
     "test": "playwright test",
+    "test:e2e": "playwright test example",
     "format": "prettier --write tests/**/*"
   },
   "dependencies": {
